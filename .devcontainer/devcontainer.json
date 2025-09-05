@@ -1,0 +1,16 @@
+{
+  "name": "x86_64 Linux ASM",
+  "build": { "dockerfile": "Dockerfile", "context": "." },
+  "runArgs": [
+    "--platform=linux/amd64",
+    "--cap-add=SYS_PTRACE",
+    "--security-opt=seccomp=unconfined"
+  ],
+  "workspaceFolder": "/work",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/work,type=bind,consistency=cached",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.cpptools", "ms-vscode.makefile-tools"]
+    }
+  }
+}
